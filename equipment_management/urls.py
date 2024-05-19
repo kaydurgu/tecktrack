@@ -1,7 +1,6 @@
 from django.urls import path, include
 from .views import (EquipmentListView, EquipmentDetailView, EquipmentInStorageListView, EquipmentUnderRepairListView
-    , EquipmentWorkingListView, EquipmentByResponsibleView, EquipmentDataDetailView)
-
+, EquipmentWorkingListView, EquipmentByResponsibleView, EquipmentDataDetailView, EquipmentAlertsDetailView)
 
 urlpatterns = [
     path('list/', EquipmentListView.as_view(), name='list-equipment'),
@@ -10,6 +9,7 @@ urlpatterns = [
     path('list/working', EquipmentWorkingListView.as_view(), name='list-equipment-working'),
     path('<int:pk>/', EquipmentDetailView.as_view(), name='equipment-detail'),
     path('data/<int:pk>/', EquipmentDataDetailView.as_view(), name='equipment-data-detail'),
+    path('alerts/<int:pk>/', EquipmentAlertsDetailView.as_view(), name='equipment-alerts-detail'),
     path('responsible/<int:pk>/', EquipmentByResponsibleView.as_view(), name='equipment-by-responsible'),
 
 ]

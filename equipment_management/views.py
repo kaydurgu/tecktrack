@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from .models import Equipment, Data
-from .serserializers import EquipmentSerializer,DataSerializer
+from .models import Equipment, Data, Alerts
+from .serserializers import EquipmentSerializer,DataSerializer, AlertsSerializer
 
 
 class IsInGroup(permissions.BasePermission):
@@ -48,4 +48,8 @@ class EquipmentByResponsibleView(generics.ListAPIView):
 class EquipmentDataDetailView(generics.RetrieveUpdateAPIView):
     queryset = Data.objects.all()
     serializer_class = DataSerializer
+    permission_classes = [permissions.IsAuthenticated]
+class EquipmentAlertsDetailView(generics.RetrieveUpdateAPIView):
+    queryset = Alerts.objects.all()
+    serializer_class = AlertsSerializer
     permission_classes = [permissions.IsAuthenticated]
