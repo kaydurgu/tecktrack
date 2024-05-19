@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, permissions
-from .models import Equipment
-from .serserializers import EquipmentSerializer
+from .models import Equipment, Data
+from .serserializers import EquipmentSerializer,DataSerializer
 
 
 class IsInGroup(permissions.BasePermission):
@@ -18,4 +18,34 @@ class IsWorkerUser(IsInGroup):
 class EquipmentListView(generics.ListAPIView):
     queryset = Equipment.objects.all()
     serializer_class = EquipmentSerializer
-    permission_classes = [permissions.IsAuthenticated | IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+class EquipmentDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Equipment.objects.all()
+    serializer_class = EquipmentSerializer
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+class EquipmentInStorageListView(generics.ListAPIView):
+    serializer_class = EquipmentSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Equipment.objects.filter(status='in_storage')
+class EquipmentUnderRepairListView(generics.ListAPIView):
+    serializer_class = EquipmentSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Equipment.objects.filter(status='under_repair')
+class EquipmentWorkingListView(generics.ListAPIView):
+    serializer_class = EquipmentSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Equipment.objects.filter(status='working')
+
+class EquipmentByResponsibleView(generics.ListAPIView):
+    serializer_class = EquipmentSerializer
+    permission_classes = [permissions.IsAuthenticated , IsAdminUser]
+    def get_queryset(self):
+        responsible_id = self.kwargs['pk']
+        return Equipment.objects.filter(responsible_id=responsible_id)
+class EquipmentDataDetailView(generics.RetrieveUpdateAPIView):
+    queryset = Data.objects.all()
+    serializer_class = DataSerializer
+    permission_classes = [permissions.IsAuthenticated]

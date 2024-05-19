@@ -1,11 +1,6 @@
 from rest_framework import serializers
 from .models import Equipment, Data, Alerts
 
-class EquipmentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Equipment
-        fields = '__all__'
-
 class DataSerializer(serializers.ModelSerializer):
     class Meta:
         model = Data
@@ -15,3 +10,9 @@ class AlertsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Alerts
         fields = '__all__'
+class EquipmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Equipment
+        fields = '__all__'
+    data = DataSerializer(many=True, read_only=True)
+    alerts = AlertsSerializer(many=True, read_only=True)
