@@ -53,3 +53,25 @@ class EquipmentAlertsDetailView(generics.RetrieveUpdateAPIView):
     queryset = Alerts.objects.all()
     serializer_class = AlertsSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+class EquipmentAlertsCriticalDetailView(generics.ListAPIView):
+    serializer_class = AlertsSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Alerts.objects.filter(severity='critical')
+
+class EquipmentAlertsHighDetailView(generics.ListAPIView):
+    serializer_class = AlertsSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Alerts.objects.filter(severity='high')
+class EquipmentAlertsMediumDetailView(generics.ListAPIView):
+    serializer_class = AlertsSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Alerts.objects.filter(severity='medium')
+class EquipmentAlertsLowDetailView(generics.ListAPIView):
+    serializer_class = AlertsSerializer
+    permission_classes = [permissions.IsAuthenticated]
+    def get_queryset(self):
+        return Alerts.objects.filter(severity='low')
