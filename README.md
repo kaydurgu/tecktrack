@@ -1,3 +1,43 @@
+# TechTrack Equipment Management API
+
+
+## Endpoints
+
+### Equipment
+
+#### Alerts
+- **GET** `/equipment/alerts/critical/`: Retrieve a list of critical alerts.
+- **GET** `/equipment/alerts/high/`: Retrieve a list of high alerts.
+- **GET** `/equipment/alerts/low/`: Retrieve a list of low alerts.
+- **GET** `/equipment/alerts/medium/`: Retrieve a list of medium alerts.
+- **GET** `/equipment/alerts/{id}/`: Retrieve details of a specific alert.
+- **PUT** `/equipment/alerts/{id}/`: Update details of a specific alert.
+- **PATCH** `/equipment/alerts/{id}/`: Partially update details of a specific alert.
+
+#### Data
+- **GET** `/equipment/data/{id}/`: Retrieve details of specific equipment data.
+- **PUT** `/equipment/data/{id}/`: Update details of specific equipment data.
+- **PATCH** `/equipment/data/{id}/`: Partially update details of specific equipment data.
+
+#### Equipment List
+- **GET** `/equipment/list/`: Retrieve a list of all equipment.  (Admin Permission need)
+- **GET** `/equipment/list/instorage/`: Retrieve a list of equipment in storage.
+- **GET** `/equipment/list/underrepair/`: Retrieve a list of equipment under repair.
+- **GET** `/equipment/list/working/`: Retrieve a list of working equipment.
+- **GET** `/equipment/responsible/{id}/`: Retrieve details of the equipment responsible worker.
+- **GET** `/equipment/{id}/`: Retrieve details of specific equipment.
+- **PUT** `/equipment/{id}/`: Update details of specific equipment.
+- **PATCH** `/equipment/{id}/`: Partially update details of specific equipment.  
+- **DELETE** `/equipment/{id}/`: Delete specific equipment.   
+
+### Worker
+
+#### Worker List
+- **GET** `/worker/`: Retrieve a list of all workers.  
+- **POST** `/worker/create/`: Create a new worker profile. 
+- **GET** `/worker/{id}/`: Retrieve details of specific worker. 
+
+
 # Models
 
 ## Profile
