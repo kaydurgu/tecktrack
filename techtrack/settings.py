@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'workers',
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 
 ]
 AUTH_USER_MODEL = 'workers.Profile'
