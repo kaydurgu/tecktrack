@@ -14,7 +14,9 @@ class IsInGroup(permissions.BasePermission):
 class IsAdminUser(IsInGroup):
     group_name = 'Admin'
 class IsWorkerUser(IsInGroup):
-    group_name = 'Worker'
+    group_name = 'Repairman'
+class IsWarehouseUser(IsInGroup):
+        group_name = 'Warehouseman'
 class EquipmentListView(generics.ListAPIView):
     queryset = Equipment.objects.all()
     serializer_class = EquipmentSerializer
