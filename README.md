@@ -52,3 +52,30 @@ Represents alerts related to equipment.
 - **severity**: Severity level of the alert (low, medium, high, critical).
 - **detected_by**: Worker who detected the alert.(Reference to the Profile of worker)
 - **resolved_by**: Worker who resolved the alert (optional)(Reference to the Profile of worker) .
+
+  
+## Profile Groups and Permissions
+
+### Admin
+- **Permissions**:
+  - Managment(CREAT, READ, DELETE, UPDATE) of equipment.
+  - Managment(CREAT, READ, DELETE, UPDATE) of alerts.
+  - Managment(CREAT, READ, DELETE, UPDATE) of data.
+  - Managment(CREAT, READ, DELETE, UPDATE) worker profiles.
+  - etc...
+
+### Repairman
+- **Permissions**:
+  - Can change alerts.
+  - Can view alerts.
+  - Can change data.
+  - Can view data.
+  - Can view profile.
+
+### Warehouseman
+- **Permissions**:
+  - Can view alerts.
+  - Can view data.
+  - Can change equipment.
+  - Can view equipment.
+  - Can view profile.
