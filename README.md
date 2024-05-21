@@ -50,7 +50,7 @@ The Equipment Management System is designed to streamline the management of equi
 - **GET** `/equipment/list/instorage/`: Retrieve a list of equipment in storage.  [Authorization required, Admin Permission needed | Warehouseman Permission needed ] 
 - **GET** `/equipment/list/underrepair/`: Retrieve a list of equipment under repair. [Authorization required, Admin Permission needed | Warehouseman Permission needed ] 
 - **GET** `/equipment/list/working/`: Retrieve a list of working equipment.         [Authorization required, Admin Permission needed | Warehouseman Permission needed ] 
-- **GET** `/equipment/responsible/{id}/`: Retrieve details of the equipment responsible worker. [Authorization required, Admin Permission needed ] 
+- **GET** `/equipment/responsible/{id}/`: Retrieve details of the equipment responsible worker. [Authorization required ] 
 - **GET** `/equipment/{id}/`: Retrieve details of specific equipment.[Authorization required ] 
 - **PUT** `/equipment/{id}/`: Update details of specific equipment.  [Authorization required, Admin Permission needed  ] 
 - **PATCH** `/equipment/{id}/`: Partially update details of specific equipment.   [Authorization required, Admin Permission needed | Warehouseman Permission needed ] 
@@ -145,7 +145,45 @@ Represents alerts related to equipment.
   - Can change equipment.
   - Can view equipment.
   - Can view profile.
-  - 
+ 
+  
+## Screenshots and Video Demonstration
+
+Equipment related endpoints 
+
+![Equipment related endpoints](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_17.png)
+
+Worker related endpoints 
+
+![Worker related endpoints ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_18.png)
+
+Alerts Data model details 
+
+![Alerts Data model details ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_19.png)
+
+Data Model details 
+
+![Data Model details  ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_20.png)
+
+Equipment Data Model details 
+
+![Equipment Ddata Model details ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_21.png)
+
+Profile Data Model details 
+
+![Equipment Ddata Model details ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_22.png)
+
+- **GET** `/equipment/responsible/{id}/`: Retrieve details of the equipment responsible worker. [Authorization required ] 
+
+![Equipment Ddata Model details ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_23.png)
+
+- **GET** `/equipment/list/instorage/`: Retrieve a list of equipment in storage.  [Authorization required, Admin Permission needed | Warehouseman Permission needed ]
+
+![Equipment Ddata Model details ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_24.png)
+
+- **GET** `/worker/`: Retrieve a list of all workers.    [Authorization required, Admin Permission need]
+![Equipment Ddata Model details ](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_25.png)
+-  
 ## Getting Started
 
 To run the application locally, follow these steps:
