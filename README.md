@@ -149,6 +149,8 @@ Represents alerts related to equipment.
   
 ## Screenshots and Video Demonstration
 
+[Video Demonstration](https://youtu.be/K1CjjGBwyXw)
+
 Equipment related endpoints 
 
 ![Equipment related endpoints](https://github.com/kaydurgu/tecktrack/blob/main/screens/Screenshot_17.png)
